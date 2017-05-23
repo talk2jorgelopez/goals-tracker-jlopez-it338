@@ -1,0 +1,38 @@
+<!-- Form to POST new goals -->
+        <div class="w3-card">
+                <form class="w3-container" action="/goals" method="POST">
+                        <label class="" for="add-goal">New goal</label>
+                        <input class="" type="text" id="add-goal" name="description">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Submit</button>
+                </form>
+         </div>
+
+        <!-- Goals grid -->
+        <div class="w3-container">
+                <ul class="w3-ul">
+                    {{#each goals}}
+                        <li id="{{_id}}" class="w3-card-4" style="width:50%">
+                                <header class="w3-container w3-blue">
+					<div>
+						<h3>Goal</h3>	
+					</div>
+                                </header>
+
+                                <div class="w3-container">
+				  <h3>{{description}}</h3>
+				</div>
+				<div>
+                                   Active since {{formatCreatedAt}}</h3>
+                                </div>
+                                <div>
+				   <button class="w3-button w3-block w3-dark-grey delete">delete</button>
+	 			</div>                                
+                        </li>
+                {{/each}}
+                </ul>
+        </div>
+
+        <div class="w3-black w3-center w3-padding-24">
+                Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+        </div>
+
